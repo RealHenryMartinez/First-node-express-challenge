@@ -10,13 +10,14 @@ var port = 7777;
 
 
 // 401 Status code
-app.get("/", (req, res) => {
-    res.status(401).json({message: "Unauthorized Access", status: 401});
+// app.get("/", (req, res) => {
+//     res.status(401).json({message: "Unauthorized Access", status: 401});
     
-  });
+//   });
 
-app.get("/error", (req, res) => {
-    res.status(401).json({message: "Unauthorized Access", status: 401});
+app.get("/", (req, res) => {
+    res.status(401).sendFile(path.join(__dirname + '/component/error.html'));
+    // .json({message: "Unauthorized Access", status: 401});
     
   });
 
